@@ -4,9 +4,13 @@ import os
 app = Flask(__name__)
 
 
+def helloWorld():
+    return "Hello World"
+
+
 @app.route('/')
 def index():
-    return jsonify({"Choo Choo": "Welcome to your Flask app 🚅"})
+    return jsonify({"Choo Choo": helloWorld()})
 
 
 if __name__ == '__main__':
