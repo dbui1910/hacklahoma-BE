@@ -18,7 +18,7 @@ def Send_Text():
     print("Messaging User")
 
 
-@app.route('/process_location/', methods=['POST'])
+@app.route('/process_location/', methods=['GET', 'POST'])
 def Capture_Location():
     lat = request.args.get('latitude')
     lng = request.args.get('longitude')
