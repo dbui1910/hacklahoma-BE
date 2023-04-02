@@ -15,14 +15,14 @@ def index():
 
 @app.route('/twillio')
 def Send_Text():
-    print("Messaging User")
+    return "Messaging User"
 
 
 @app.route('/process_location', methods=['GET', 'POST'])
 def Capture_Location():
     lat = request.args.get('latitude')
     lng = request.args.get('longitude')
-    print("Current Location... Lat:", lat, "\tLong:", lng)
+    return "Current Location... Lat:", lat, "\tLong:", lng
 
 
 if __name__ == '__main__':
