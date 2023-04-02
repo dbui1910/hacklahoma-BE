@@ -18,10 +18,11 @@ def Send_Text():
     return "Messaging User"
 
 
-@app.route('/process_location', methods=['GET'])
+@app.route('/process_location', methods=['POST'])
 def Capture_Location():
-    lat = request.args.get('latitude')
-    lng = request.args.get('longitude')
+    data = request.get_json()
+    lat = data['latitude']
+    lng = data['longitude']
     return "Current Location... Lat:", lat, "\tLong:", lng
 
 
