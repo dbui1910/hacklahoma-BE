@@ -20,9 +20,12 @@ def Send_Text():
 
 @app.route('/process_location', methods=['GET', 'POST'])
 def Capture_Location():
-    lat = request.args.get('latitude')
-    lng = request.args.get('longitude')
-    return "Current Location... Lat:", lat, "\tLong:", lng
+    if request.method == 'POST':
+        lat = request.args.get('latitude')
+        lng = request.args.get('longitude')
+        return "Current Location... Lat:", lat, "\tLong:", lng
+    else:
+        return "Send a post please."
 
 
 if __name__ == '__main__':
